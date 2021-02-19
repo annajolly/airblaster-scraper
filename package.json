@@ -1,0 +1,28 @@
+{
+  "name": "airblaster-scraper",
+  "version": "1.0.0",
+  "description": "Scrapes the Airblaster site for beast suit",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/annajolly/airblaster-scraper.git"
+  },
+  "author": "Anna Jolly",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/annajolly/airblaster-scraper/issues"
+  },
+  "homepage": "https://github.com/annajolly/airblaster-scraper#readme",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "dotenv": "^8.2.0",
+    "puppeteer": "^7.1.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7",
+    "webpack-dev-server": "^3.11.2"
+  }
+}
