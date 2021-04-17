@@ -1,0 +1,28 @@
+name: "Run Airblaster scraper"
+
+on:
+  schedule:
+    - cron: "0 22 * * 0"
+  workflow_dispatch:
+
+jobs:
+  run-weekly-scraper:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Git checkout
+        uses: actions/checkout@v2
+
+      - name: Use Node 12.x
+        uses: actions/setup-node@v2
+
+      - name: Setup chrome for puppeteer
+        uses: browser-actions/setup-chrome@latest
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Run scraper
+        run: node ./index
+        env:
+          TELEGRAM_API_KEY: ${{ secrets.TELEGRAM_API_KEY }}
+          CHAT_ID: ${{ secrets.CHAT_ID }}

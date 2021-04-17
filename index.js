@@ -18,9 +18,11 @@ const sendUpdate = async (itemAvailabilities) => {
 
 (async () => {
   try {
-    const browser = await puppeteer.launch({
-      executablePath: "/usr/local/bin/chromium",
-    });
+    // to run locally, pass following object as arg to launch()
+    // {
+    //  executablePath: "/usr/local/bin/chromium",
+    // }
+    const browser = await puppeteer.launch();
     const page = await browser.newPage();
 
     await page.goto(SASSY_BEAST_SUIT_URL);
